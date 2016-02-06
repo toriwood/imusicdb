@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+html, body {
+	background: url(background.jpg) no-repeat center center fixed;
+	 -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;	
+  color: #129793;
+}
+  
+div {
+  font-family: 'Poiret One', Helvetica, Arial, sans-serif;
+  font-weight: bold; 
+  font-size: 1.1em;
+}
+
+.navbar-default .navbar-brand {
+	color: #129793;
+}
+
+.navbar-default .navbar-right {
+	color: #129793;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #129793;
+}
+
+.jumbotron {
+	padding-top: 75px;
+	background: transparent;
+	color: #129793;
+	font-weight: bold;
+	text-align: center;
+}
+
+.btn {
+	background-color: #129793;
+	border: 1px #129793;
+}
+
+.btn:hover, .btn:focus {
+	background-color: #129793;
+	color: black;
+}
+
+.container {
+	margin: 0 auto;
+}

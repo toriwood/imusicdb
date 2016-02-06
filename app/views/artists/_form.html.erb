@@ -1,0 +1,19 @@
+<%= form_for @artist do |f| %>
+	
+		<div class="form-field">
+			<%= f.text_field :name, :placeholder => "Name", class: "form-control" %>
+		</div>
+
+		<br>
+
+	<div class="form-field">
+		<%= f.number_field :rating, :placeholder => "Rating", class: "form-control" %>
+	</div>
+
+	<br>
+
+	<div class="form-field">
+		<%= f.submit "Create Artist", class: "btn btn-primary" %>
+	</div>
+
+<% end %>

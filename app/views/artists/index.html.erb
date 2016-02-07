@@ -1,6 +1,28 @@
+<div class="container-fluid">
 
-<div class="container col-md-6">
-	<% @artists.each do |artist| %>
-	<%= artist.name %>
+<div class="container">
+	<%= link_to new_artist_path, class: "btn btn-primary btn-top" do %>
+	    <i class="glyphicon glyphicon-plus-sign"></i> Add A New Artist
 	<% end %>
+</div>
+
+	<div class="tiles">
+		<% @artists.each do |artist| %>
+			<div class="well col-xs-12 col-sm-10 col-md-10 col-lg-10">
+					<%= link_to artist.name, artist_path(artist) %>
+					<br>
+					<br>
+					<%= link_to artist.rating, artist_path(artist) %>
+				<hr>
+				<div>
+					<%= link_to edit_artist_path(artist), class: "btn btn-primary btn-top" do %>
+			    <i class="glyphicon glyphicon-pencil"></i> Edit Artist
+					<% end %>
+					<%= link_to artist_path(artist), method: :delete, class: "btn btn-primary btn-top", data: { confirm: "Do you really want to delete this artist along with all of their songs?" } do %>
+			    <i class="glyphicon glyphicon-trash"></i> Delete Artist
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>

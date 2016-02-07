@@ -14,8 +14,6 @@
  *= require_self
  */
 
- @import url(https://fonts.googleapis.com/css?family=Poiret+One);
-
 html, body {
 	background: url(background.jpg) no-repeat center center fixed;
 	 -webkit-background-size: cover;
@@ -23,6 +21,7 @@ html, body {
   -o-background-size: cover;
   background-size: cover;	
   color: #129793;
+  font-weight: bold;
 }
   
 div {
@@ -43,6 +42,14 @@ div {
 	color: #129793;
 }
 
+a {
+	color: #129793;
+}
+
+a:hover, a:focus {
+	color: #129793;
+}
+
 .jumbotron {
 	padding-top: 75px;
 	background: transparent;
@@ -51,16 +58,32 @@ div {
 	text-align: center;
 }
 
-.btn {
+.btn, .btn-lg {
 	background-color: #129793;
 	border: 1px #129793;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover, .btn:focus, .btn-lg:hover, .btn-lg:focus {
 	background-color: #129793;
 	color: black;
 }
 
-.container {
+.container, div.container-fluid {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.well {
+	margin: 10px;
+	min-width: 300px;
+	height: 300px;
+	text-align: center;
+}
+
+hr {
+	color: black;
+}
+
+.tiles {
 	margin: 0 auto;
 }

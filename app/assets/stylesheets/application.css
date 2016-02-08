@@ -61,6 +61,7 @@ a:hover, a:focus {
 .btn, .btn-lg {
 	background-color: #129793;
 	border: 1px #129793;
+	margin: 3px;
 }
 
 .btn:hover, .btn:focus, .btn-lg:hover, .btn-lg:focus {
@@ -75,15 +76,29 @@ a:hover, a:focus {
 
 .well {
 	margin: 10px;
-	min-width: 300px;
-	height: 300px;
+	max-width: 250px;
+	display: inline-block;
 	text-align: center;
 }
 
 hr {
-	color: black;
+	height: 1px;
+  background-color:#555;
 }
 
 .tiles {
 	margin: 0 auto;
+}
+
+.form {
+	max-width: 500px;
+}
+
+.show {
+	background-color: #F8F8F8;
+	border-radius: 10px;
+}
+
+span.glyphicon {
+	font-size: .7em;
 }

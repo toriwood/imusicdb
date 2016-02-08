@@ -8,11 +8,17 @@
 
 	<div class="tiles">
 		<% @artists.each do |artist| %>
-			<div class="well col-xs-12 col-sm-10 col-md-10 col-lg-10">
+			<div class="well">
 					<%= link_to artist.name, artist_path(artist) %>
 					<br>
 					<br>
-					<%= link_to artist.rating, artist_path(artist) %>
+					<div class="text-center">
+						<% artist.rating.times do %>
+							<span class="glyphicon glyphicon-star"></span>
+						<% end %>
+					<br>
+					(<%= artist.rating %>/10)
+					</div>
 				<hr>
 				<div>
 					<%= link_to edit_artist_path(artist), class: "btn btn-primary btn-top" do %>

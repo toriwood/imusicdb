@@ -1,0 +1,25 @@
+<%= form_for @song do |f| %>
+
+	<div class="form-field">
+		<%= f.text_field :name, :placeholder => "Name", class: "form-control" %>
+	</div>
+
+		<br>
+	
+	<div class="form-field">
+		<%= f.collection_select( :artist_id, @artists, :id, :name, {prompt: "Select an artist:"}, class: "form-control")%>
+	</div>
+
+		<br>
+
+	<div class="form-field">
+		<%= f.select :rating, (0..10), {prompt: "Rating"}, class: "form-control" %>
+	</div>
+
+	<br>
+
+	<div class="form-field">
+		<%= f.submit "Save", class: "btn btn-primary" %>
+	</div>
+
+<% end %>

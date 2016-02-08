@@ -1,1 +1,16 @@
-<h1><%= @artist.name %></h1>
+<div class="container show">
+	<h1><%= @artist.name %></h1>
+
+	<h1>Average Rating: 
+		<br>
+		<% @artist.rating.times do %>
+		<span class="glyphicon glyphicon-star"></span>
+		<% end %> (<%= @artist.rating %>/10)
+	</h1>
+	<hr>
+
+	<h2>Song by this artists:</h2>
+	<% @songs.each do |song| %>
+	<h3><%= link_to song.name, song %></h3>
+	<% end %>
+</div>

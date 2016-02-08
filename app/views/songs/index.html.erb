@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+<div class="container">
+	<%= link_to new_song_path, class: "btn btn-primary btn-top" do %>
+	    <i class="glyphicon glyphicon-plus-sign"></i> Add A New Song
+	<% end %>
+</div>
+
+	<div class="tiles">
+		<% @songs.each do |song| %>
+			<div class="well">
+					<p><%= link_to song.name, song_path(song) %></p>
+					<p>by <%= link_to song.artist.name, artist_path(song.artist_id) %></p>
+					<p>	<% song.rating.times do %>
+							<span class="glyphicon glyphicon-star"></span>
+							<% end %>
+					<br>
+					(<%= song.rating %>/10)
+					</p>
+				<hr>
+				<div>
+					<%= link_to edit_song_path(song), class: "btn btn-primary btn-top" do %>
+			    <i class="glyphicon glyphicon-pencil"></i> Edit Song
+					<% end %>
+					<%= link_to song_path(song), method: :delete, class: "btn btn-primary btn-top", data: { confirm: "Do you really want to delete this song?" } do %>
+			    <i class="glyphicon glyphicon-trash"></i> Delete Song
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

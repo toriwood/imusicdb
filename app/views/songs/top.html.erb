@@ -1,0 +1,19 @@
+<div class="container-fluid">
+<h1>Top 5 Songs</h1>
+
+<div class="tiles">
+		<% @top_songs.each do |song| %>
+			<div class="well">
+				<p><%= link_to image_tag(song.artist.image.url(:thumb), class: "img-circle"), artist_path(song.artist_id) %></p>
+					<p><%= link_to song.name, song %></p>
+					<p>by <%= link_to song.artist.name, artist_path(song.artist_id) %></p>
+				<hr>
+				<p><% song.rating.times do %>
+					<span class="glyphicon glyphicon-star"></span>
+				<% end %>
+				</p>
+				<p><%= song.rating %></p>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -76,7 +76,7 @@ a:hover, a:focus {
 
 .well {
 	margin: 10px;
-	max-width: 250px;
+	width: 250px;
 	display: inline-block;
 	text-align: center;
 }

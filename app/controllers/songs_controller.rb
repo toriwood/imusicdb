@@ -48,6 +48,10 @@ class SongsController < ApplicationController
 		redirect_to :action => "index"
 	end
 
+	def top
+		@top_songs = Song.all.order('rating DESC').take(5)
+	end
+
 	private
 
 	def set_song

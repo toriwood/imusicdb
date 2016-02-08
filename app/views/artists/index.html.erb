@@ -9,15 +9,16 @@
 	<div class="tiles">
 		<% @artists.each do |artist| %>
 			<div class="well">
+				<p><%= link_to image_tag(artist.image.url(:thumb), class: "img-circle"), artist %></p>
 					<%= link_to artist.name, artist_path(artist) %>
 					<br>
 					<br>
 					<div class="text-center">
-						<% artist.rating.times do %>
+						<% Song.where(artist_id: artist.id).average("rating").to_i.times do %>
 							<span class="glyphicon glyphicon-star"></span>
 						<% end %>
 					<br>
-					(<%= artist.rating %>/10)
+					(<%= Song.where(artist_id: artist.id).average("rating").to_i %>/10)
 					</div>
 				<hr>
 				<div>

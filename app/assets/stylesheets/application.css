@@ -102,3 +102,7 @@ hr {
 span.glyphicon {
 	font-size: .7em;
 }
+
+.img-circle {
+	.border-radius: 50%;
+}

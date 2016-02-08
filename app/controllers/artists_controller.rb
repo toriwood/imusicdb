@@ -55,7 +55,7 @@ class ArtistsController < ApplicationController
 
 		redirect_to :action => "index"		
 	end
-
+	
 	private
 
 	def set_artist
@@ -63,6 +63,6 @@ class ArtistsController < ApplicationController
 	end
 
 	def artist_params
-		params.require(:artist).permit(:name, :rating)		
+		params.require(:artist).permit(:name, :rating, :image)		
 	end
 end

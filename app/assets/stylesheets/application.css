@@ -15,7 +15,7 @@
  */
 
 html, body {
-	background: url(background.jpg) no-repeat center center fixed;
+	background: url(https://s3.amazonaws.com/twood.music.aws-bucket/background.jpg) no-repeat center center fixed;
 	 -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

@@ -3,9 +3,13 @@
 
 	<h1>Average Rating: 
 		<br>
+		<% if @artist.rating != nil %>
 		<% @artist.rating.times do %>
 		<span class="glyphicon glyphicon-star"></span>
 		<% end %> (<%= @artist.rating %>/10)
+		<% else %>
+		<p>Artist is currently unrated.</p>
+		<% end %>
 	</h1>
 	<hr>
 

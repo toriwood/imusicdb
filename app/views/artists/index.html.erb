@@ -14,11 +14,15 @@
 					<br>
 					<br>
 					<div class="text-center">
+						<% if Song.where(artist_id: artist.id).empty? %>
+						This artist is currently unrated.
+						<% else %>
 						<% Song.where(artist_id: artist.id).average("rating").to_i.times do %>
 							<span class="glyphicon glyphicon-star"></span>
 						<% end %>
 					<br>
 					(<%= Song.where(artist_id: artist.id).average("rating").to_i %>/10)
+				<% end %>
 					</div>
 				<hr>
 				<div>

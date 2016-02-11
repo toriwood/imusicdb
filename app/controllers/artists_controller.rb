@@ -31,7 +31,8 @@ class ArtistsController < ApplicationController
 	end
 
 	def create
-		@artist = Artist.create(artist_params)
+		@artist = Artist.new(artist_params)
+		@artist.save
 
 		if @artist.save
 			flash[:success] = "Artist created successfully."

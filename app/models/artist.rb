@@ -10,4 +10,8 @@ class Artist < ActiveRecord::Base
   	rating || 0  	
   end
 
+  def average_rating
+  	Song.where(artist_id: self.id).average("rating").to_i || 0  	
+  end
+
 end

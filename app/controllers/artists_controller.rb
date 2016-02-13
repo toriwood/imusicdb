@@ -1,6 +1,5 @@
 class ArtistsController < ApplicationController
-	before_action :set_artist, only:[:show, :update, :destroy, :edit]
-
+	
 	def index
 		@artists = Artist.all
 		@songs = Song.all
@@ -11,17 +10,17 @@ class ArtistsController < ApplicationController
 	end
 
 	def edit
-		
+		artist
 	end
 
 	def show
-		@songs = Song.where(artist_id: @artist.id)
+		@songs = Song.where(artist_id: artist.id)
 	end
 
 	def update
-		@artist.update(artist_params)
+		artist.update(artist_params)
 		
-		if @artist.save
+		if artist.save
 			flash[:success] = "Artist updated successfully."
 			redirect_to :artists => "show"
 		else
@@ -44,15 +43,15 @@ class ArtistsController < ApplicationController
 	end
 
 	def destroy
-		@artist.destroy
+		artist.destroy
 
 		redirect_to :action => "index"		
 	end
 	
 	private
 
-	def set_artist
-		@artist = Artist.find(params[:id])
+	def artist
+		@artist ||= Artist.find(params[:id])
 	end
 
 	def artist_params

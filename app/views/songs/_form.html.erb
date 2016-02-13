@@ -1,4 +1,4 @@
-<%= form_for @song do |f| %>
+<%= form_for song do |f| %>
 
 	<div class="form-field">
 		<%= f.text_field :name, :placeholder => "Name", class: "form-control" %>
@@ -13,7 +13,7 @@
 		<br>
 
 	<div class="form-field">
-		<%= f.select :rating, (0..10), {prompt: "Rating"}, class: "form-control" %>
+		<%= f.select :rating, (1..10), {prompt: "Rating"}, class: "form-control" %>
 	</div>
 
 	<br>

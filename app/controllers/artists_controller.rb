@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def edit
-		artist
+		
 	end
 
 	def show
@@ -53,6 +53,7 @@ class ArtistsController < ApplicationController
 	def artist
 		@artist ||= Artist.find(params[:id])
 	end
+	helper_method :artist
 
 	def artist_params
 		params.require(:artist).permit(:name, :rating, :image)		

@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 gem 'pg'
+gem 'rspotify'
+gem 'awesome_print'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

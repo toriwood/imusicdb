@@ -44,15 +44,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def destroy
-		@songs = Song.where(artist_id: @artist.id)		
-		
 		@artist.destroy
-		
-		if @songs != nil
-			@songs.each do |song|
-				song.destroy
-			end
-		end
 
 		redirect_to :action => "index"		
 	end

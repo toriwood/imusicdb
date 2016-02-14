@@ -97,6 +97,11 @@ hr {
 .show {
 	background-color: #F8F8F8;
 	border-radius: 10px;
+	margin: 20px;
+}
+
+.show ul {
+	list-style: none;
 }
 
 span.glyphicon {

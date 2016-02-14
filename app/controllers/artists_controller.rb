@@ -23,7 +23,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def show
-		spotify_artist = RSpotify::Artist.search(artist.name).first
+		@spotify_artist = RSpotify::Artist.search(artist.name).first
 		@songs = Song.where(artist_id: artist.id)
 	end
 

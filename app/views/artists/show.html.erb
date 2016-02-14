@@ -1,18 +1,26 @@
-<div class="container show">
-	<h1><%= artist.name %></h1>
+<div class="container show col-sm-7 col-lg-7">
+	<h1><strong><%= artist.name %></strong></h1>
 
-	<h1>Average Rating: 
+	<h3>Average Rating: 
 		<br>
 		<% artist.star_rating.times do %>
 		<span class="glyphicon glyphicon-star"></span>
 		<% end %> (<%= artist.rating %>/10)
-		<% else %>
-		<p>Artist is currently unrated.</p>
-	</h1>
+	</h3>
 	<hr>
 
 	<h2>Songs by this artists:</h2>
 	<% @songs.each do |song| %>
 	<h3><%= link_to song.name, song %></h3>
+	<% end %>
+</div>
+
+
+<div class="container show col-sm-4 col-lg-4">
+	<h1><strong>You may also like:</h1></strong>
+	<% @spotify_artist.related_artists.take(12).each do |spotify_artist| %>
+		<ul class="">
+			<li><%= spotify_artist.name %></li>
+		</ul>
 	<% end %>
 </div>

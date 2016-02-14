@@ -1,5 +1,14 @@
 class ArtistsController < ApplicationController
-	
+	#use rspotify gem to pull similar artists' top songs as recommendations for user
+	#use omniauth gem to allow users to log in and out.
+
+	#artist.name => "Arctic Monkeys"
+	#artist.related_artists.first.name => "Miles Kane"
+
+	#have this as a sidebar that shows on the artist showpage
+
+	#can search playlists by type from user input	
+
 	def index
 		@artists = Artist.all
 		@songs = Song.all
@@ -14,6 +23,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def show
+		spotify_artist = RSpotify::Artist.search(artist.name).first
 		@songs = Song.where(artist_id: artist.id)
 	end
 

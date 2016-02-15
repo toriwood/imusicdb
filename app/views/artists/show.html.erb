@@ -19,8 +19,14 @@
 <div class="container show col-sm-4 col-lg-4">
 	<h1><strong>You may also like:</h1></strong>
 	<% @spotify_artist.related_artists.take(12).each do |spotify_artist| %>
-		<ul class="">
-			<li><%= spotify_artist.name %></li>
-		</ul>
+		<p><%= link_to spotify_artist.name, spotify_artist.uri %></p>
+	<% end %>
+</div>
+
+
+<div class="container show col-sm-4 col-lg-4">
+	<h1><strong>Playlists you may like:</h1></strong>
+	<% @spotify_playlists.each do |spotify_playlist| %>
+			<p><%= link_to spotify_playlist.name, spotify_playlist.uri(country: "US") %></p>
 	<% end %>
 </div>
